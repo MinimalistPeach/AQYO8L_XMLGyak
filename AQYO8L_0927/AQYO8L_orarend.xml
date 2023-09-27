@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AQYO8L_Orarend>
+    <ora id="1" tipus="eloadas">
+        <targy> WEB-Technológiák </targy>
+        <idopont>
+            <nap> Hétfő </nap>
+            <mettol> 14:00 </mettol>
+            <meddig>  15:30 </meddig>
+        </idopont>
+        <helyszin> XXX.előadó </helyszin>
+        <oktato> Agárdi Anita </oktato>
+        <szakok>
+            <szak>Programtervező Informatikus</szak>
+             <szak>Mérnök Informatikus</szak>
+        </szakok>
+    </ora>
+
+    <ora id="2" tipus="gyakorlat">
+        <targy> WEB-Technológiák gyakorlat</targy>
+        <idopont>
+            <nap> Hétfő </nap>
+            <mettol> 16:00 </mettol>
+            <meddig>  17:30 </meddig>
+        </idopont>
+        <helyszin> In/202 </helyszin>
+        <oktato> Agárdi Anita </oktato>
+        <szakok>
+            <szak>Programtervező Informatikus</szak>
+            <szak>Mérnök Informatikus</szak>
+        </szakok>
+    </ora>
+
+    <ora id="3" tipus="eloadas">
+        <targy> Mesterséges intellmeddigencia alapok </targy>
+        <idopont>
+            <nap> Kedd </nap>
+            <mettol> 10:00 </mettol>
+            <meddig>  11:30 </meddig>
+        </idopont>
+        <helyszin> XXXII.előadó </helyszin>
+        <oktato> Fazekas Levente Áron </oktato>
+        <szakok>
+            <szak>Programtervező Informatikus</szak>
+            <szak>Mérnök Informatikus</szak>
+        </szakok>
+    </ora>
+
+    <ora id="4" tipus="eloadas">
+        <targy> Adatkezelés XML-ben </targy>
+        <idopont>
+            <nap> Kedd </nap>
+            <mettol> 12:00 </mettol>
+            <meddig>  13:30 </meddig>
+        </idopont>
+        <helyszin> XXXII.előadó </helyszin>
+        <oktato> Dr. Bednarik László </oktato>
+        <szakok>
+            <szak>Programtervező Informatikus</szak>
+            <szak>Mérnök Informatikus</szak>
+        </szakok>
+    </ora>
+
+    <ora id="5" tipus="eloadas">
+        <targy> Algoritmusok és vizsgálatuk </targy>
+        <idopont>
+            <nap> Kedd </nap>
+            <mettol> 14:00 </mettol>
+            <meddig>  17:30 </meddig>
+        </idopont>
+        <helyszin> A1/320 </helyszin>
+        <oktato> Dr. Házy Attila </oktato>
+        <szakok>
+            <szak>Programtervező Informatikus</szak>
+        </szakok>
+    </ora>
+
+    <ora id="6" tipus="gyakorlat">
+        <targy> Adatkezelés XML-ben </targy>
+        <idopont>
+            <nap> Szerda </nap>
+            <mettol> 12:00 </mettol>
+            <meddig>  13:30 </meddig>
+        </idopont>
+        <helyszin> In/103 </helyszin>
+        <oktato> Dr. Bednarik László </oktato>
+        <szakok>
+            <szak>Programtervező Informatikus</szak>
+            <szak>Mérnök Informatikus</szak>
+        </szakok>
+    </ora>
+
+    <ora id="7" tipus="gyakorlat">
+        <targy> Adatkezelés XML-ben </targy>
+        <idopont>
+            <nap> Szerda </nap>
+            <mettol> 12:00 </mettol>
+            <meddig>  13:30 </meddig>
+        </idopont>
+        <helyszin> In/103 </helyszin>
+        <oktato> Dr. Bednarik László </oktato>
+        <szakok>
+            <szak>Programtervező Informatikus</szak>
+            <szak>Mérnök Informatikus</szak>
+        </szakok>
+    </ora>
+
+    <ora id="8" tipus="elmélet">
+        <targy> Vállalati információs rendszerek fejlesztése </targy>
+        <idopont>
+            <nap> Szerda </nap>
+            <mettol> 14:00 </mettol>
+            <meddig>  15:30 </meddig>
+        </idopont>
+        <helyszin> In/101 </helyszin>
+        <oktato> Dr. Sasvári Péter László </oktato>
+        <szakok>
+            <szak>Programtervező Informatikus</szak>
+            <szak>Mérnök Informatikus</szak>
+        </szakok>
+    </ora>
+
+    <ora id="9" tipus="gyakorlat">
+        <targy> Vállalati információs rendszerek fejlesztése </targy>
+        <idopont>
+            <nap> Szerda </nap>
+            <mettol> 18:00 </mettol>
+            <meddig>  19:30 </meddig>
+        </idopont>
+        <helyszin> In/103 </helyszin>
+        <oktato> Dr. Sasvári Péter László </oktato>
+        <szakok>
+            <szak>Programtervező Informatikus</szak>
+            <szak>Mérnök Informatikus</szak>
+        </szakok>
+    </ora>
+
+    <ora id="10" tipus="gyakorlat">
+        <targy> Mesterséges intellmeddigencia alapok </targy>
+        <idopont>
+            <nap> Csütörtök </nap>
+            <mettol> 10:00 </mettol>
+            <meddig>  11:30 </meddig>
+        </idopont>
+        <helyszin> I.előadó </helyszin>
+        <oktato> Fazekas Levente Áron </oktato>
+        <szakok>
+            <szak>Programtervező Informatikus</szak>
+            <szak>Mérnök Informatikus</szak>
+        </szakok>
+    </ora>
+</AQYO8L_Orarend>

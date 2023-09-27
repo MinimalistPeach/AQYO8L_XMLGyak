@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<konferencia>
+    <cim> Az adatkezelés fontossága </cim>
+    <hallgatók>
+        <hallgató>
+            <név> Megjen Elek </név>
+            <lakcím> Jelenés u. 23 </lakcím>
+        </hallgató>
+        <hallgató>
+            <név> Gyári Zsolt </név>
+            <lakcím> Vasgyár u. 10 </lakcím>
+        </hallgató>
+        <hallgató>
+            <név> Béka Kálmán </név>
+            <lakcím> Kerekerdő utca 143. </lakcím>
+        </hallgató>
+    </hallgatók>
+    <helyszín>
+        Budapest, Kerepesi úti előadóközpont
+    </helyszín>
+    <előadó>
+        <név> Erdős Ernő Béla </név>
+        <adószám> 123456789 </adószám>
+        <lakcím> Kétely utca 67. </lakcím>
+    </előadó>
+    <dátum> 2023. 09. 27</dátum>
+</konferencia>
