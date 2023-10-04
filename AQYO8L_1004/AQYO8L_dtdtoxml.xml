@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE AQYO8L_modell SYSTEM "AQYO8L_ertodtd.dtd">
+
+<AQYO8L_modell>
+    <A a="a123">
+        <b>
+            <x>x elem</x>
+            <y>y elem</y>
+        </b>
+        <c>
+            <d>d elem</d>
+            <e>e elem</e>
+        </c>
+    </A>
+    <AB aid="a123" bid="b456">
+        <cAB>cAB adat</cAB>
+    </AB>
+    <B a="b456">
+        <b>
+            <x>
+                x elem
+            </x>
+            <y>
+                y elem
+            </y>
+        </b>
+    </B>
+    <BC bid="b456" cid="c789"/>
+    <C a="c789">
+        <bC>Data for bC</bC>
+    </C>
+</AQYO8L_modell>
