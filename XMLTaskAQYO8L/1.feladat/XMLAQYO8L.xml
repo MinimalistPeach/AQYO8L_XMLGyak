@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Aruhaz-beszallito_AQYO8L>
+    <!-- Áruházak létrehozása és adatai megadása-->
+    <Aruhazak>
+        <!--Első
+        áruház és adatai-->
+        <Aruhaz>
+            <AruhazID>1</AruhazID>
+            <Nev>Tesco</Nev>
+            <Cim>
+                <Iranyitoszam>3544</Iranyitoszam>
+                <Telepules>Miskolc</Telepules>
+                <Utca>Karakter utca</Utca>
+                <Hazszam>12</Hazszam>
+            </Cim>
+        </Aruhaz>
+
+        <!--Második
+        áruház és adatai-->
+        <Aruhaz>
+            <AruhazID>2</AruhazID>
+            <Nev>Auchan</Nev>
+            <Cim>
+                <Iranyitoszam>1138</Iranyitoszam>
+                <Telepules>Budapest</Telepules>
+                <Utca>Lehel utca</Utca>
+                <Hazszam>5</Hazszam>
+            </Cim>
+        </Aruhaz>
+
+        <!--Harmadik
+        áruház és adatai-->
+        <Aruhaz>
+            <AruhazID>3</AruhazID>
+            <Nev>Spar</Nev>
+            <Cim>
+                <Iranyitoszam>6722</Iranyitoszam>
+                <Telepules>Szeged</Telepules>
+                <Utca>Arany János utca</Utca>
+                <Hazszam>3</Hazszam>
+            </Cim>
+        </Aruhaz>
+    </Aruhazak>
+
+    <Beszallitok>
+        <!-- Beszállítók létrehozása és adatai megadása-->
+        <Beszallito>
+            <BeszallitoID>1</BeszallitoID>
+            <Nev>Kerékroncs KFT.</Nev>
+            <Termek_kategoria>Gépjármű alkatrész</Termek_kategoria>
+            <Atlagos_szallitasi_ido>12</Atlagos_szallitasi_ido>
+        </Beszallito>
+
+        <Beszallito>
+            <BeszallitoID>2</BeszallitoID>
+            <Nev>Építőanyag KFT.</Nev>
+            <Termek_kategoria>Építőanyag</Termek_kategoria>
+            <Atlagos_szallitasi_ido>7</Atlagos_szallitasi_ido>
+        </Beszallito>
+
+        <Beszallito>
+            <BeszallitoID>3</BeszallitoID>
+            <Nev>Elektronikai KFT.</Nev>
+            <Termek_kategoria>Elektronika</Termek_kategoria>
+            <Atlagos_szallitasi_ido>5</Atlagos_szallitasi_ido>
+        </Beszallito>
+    </Beszallitok>
+
+    <Raktarak>
+        <!-- Áruház raktárak és adataik-->
+        <Raktar type="aruhaz">
+            <TermekID>1</TermekID>
+            <Nev>Rántotthús</Nev>
+            <Darabszam>2</Darabszam>
+            <Kategoria>Élelmiszer</Kategoria>
+            <Ar>1200</Ar>
+        </Raktar>
+        <Raktar type="aruhaz">
+            <TermekID>2</TermekID>
+            <Nev>Tej</Nev>
+            <Darabszam>10</Darabszam>
+            <Kategoria>Élelmiszer</Kategoria>
+            <Ar>300</Ar>
+        </Raktar>
+        <Raktar type="aruhaz">
+            <TermekID>3</TermekID>
+            <Nev>Asztal</Nev>
+            <Darabszam>5</Darabszam>
+            <Kategoria>Bútor</Kategoria>
+            <Ar>15000</Ar>
+        </Raktar>
+
+        <!-- Beszállító raktárak és adataik-->
+        <Raktar type="beszallito">
+            <TermekID>4</TermekID>
+            <Nev>Autóalkatrész</Nev>
+            <Darabszam>50</Darabszam>
+            <Kategoria>Gépjármű alkatrész</Kategoria>
+            <Ar>5000</Ar>
+        </Raktar>
+        <Raktar type="beszallito">
+            <TermekID>5</TermekID>
+            <Nev>Csempe</Nev>
+            <Darabszam>100</Darabszam>
+            <Kategoria>Építőanyag</Kategoria>
+            <Ar>2000</Ar>
+        </Raktar>
+        <Raktar type="beszallito">
+            <TermekID>6</TermekID>
+            <Nev>Laptop</Nev>
+            <Darabszam>20</Darabszam>
+            <Kategoria>Elektronika</Kategoria>
+            <Ar>150000</Ar>
+        </Raktar>
+    </Raktarak>
+
+    <!-- Akciós termékek és adataik-->
+    <Akcios_termekek>
+        <Termek>
+            <Akcios_termek_ID>1</Akcios_termek_ID>
+            <Nev>Farhát</Nev>
+            <Leiras>Finom farhát</Leiras>
+            <Kategória>Élelmiszer</Kategória>
+            <Eredeti_ar>1200 Ft</Eredeti_ar>
+            <Eredeti_ar>4 eu</Eredeti_ar>
+            <Akcios_ar>1100 Ft</Akcios_ar>
+            <Akcios_ar>3,75 eu</Akcios_ar>
+        </Termek>
+        <Termek>
+            <Akcios_termek_ID>2</Akcios_termek_ID>
+            <Nev>Tej</Nev>
+            <Leiras>Friss tej</Leiras>
+            <Kategória>Élelmiszer</Kategória>
+            <Eredeti_ar>300 Ft</Eredeti_ar>
+            <Eredeti_ar>1 eu</Eredeti_ar>
+            <Akcios_ar>250 Ft</Akcios_ar>
+            <Akcios_ar>0,85 eu</Akcios_ar>
+        </Termek>
+        <Termek>
+            <Akcios_termek_ID>3</Akcios_termek_ID>
+            <Nev>Asztal</Nev>
+            <Leiras>Igényes asztal</Leiras>
+            <Kategória>Bútor</Kategória>
+            <Eredeti_ar>15000 Ft</Eredeti_ar>
+            <Eredeti_ar>50 eu</Eredeti_ar>
+            <Akcios_ar>12000 Ft</Akcios_ar>
+            <Akcios_ar>40,8 eu</Akcios_ar>
+        </Termek>
+        <Termek>
+            <Akcios_termek_ID>4</Akcios_termek_ID>
+            <Nev>Autóalkatrész</Nev>
+            <Leiras>Minőségi alkatrész</Leiras>
+            <Kategória>Gépjármű alkatrész</Kategória>
+            <Eredeti_ar>5000 Ft</Eredeti_ar>
+            <Eredeti_ar>17 eu</Eredeti_ar>
+            <Akcios_ar>4500 Ft</Akcios_ar>
+            <Akcios_ar>15,3 eu</Akcios_ar>
+        </Termek>
+        <Termek>
+            <Akcios_termek_ID>5</Akcios_termek_ID>
+            <Nev>Csempe</Nev>
+            <Leiras>Stílusos csempe</Leiras>
+            <Kategória>Építőanyag</Kategória>
+            <Eredeti_ar>2000 Ft</Eredeti_ar>
+            <Eredeti_ar>6,8 eu</Eredeti_ar>
+            <Akcios_ar>1800 Ft</Akcios_ar>
+            <Akcios_ar>6,12 eu</Akcios_ar>
+        </Termek>
+    </Akcios_termekek>
+
+</Aruhaz-beszallito_AQYO8L>
