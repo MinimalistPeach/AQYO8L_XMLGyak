@@ -152,7 +152,7 @@
                                         <xs:element name="Arak" maxOccurs="1">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="Eredeti_ar">
+                                                    <xs:element name="Eredeti_ar" minOccurs="0" maxOccurs="unbounded">
                                                         <xs:complexType>
                                                             <xs:simpleContent>
                                                                 <xs:extension base="xs:double">
@@ -171,7 +171,7 @@
                                                             </xs:simpleContent>
                                                         </xs:complexType>
                                                     </xs:element>
-                                                    <xs:element name="Akcios_ar">
+                                                    <xs:element name="Akcios_ar" minOccurs="0" maxOccurs="unbounded">
                                                         <xs:complexType>
                                                             <xs:simpleContent>
                                                                 <xs:extension base="xs:double">
