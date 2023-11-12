@@ -1,207 +1,269 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="Aruhaz-beszallito_AQYO8L">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Aruhazak">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Aruhaz" maxOccurs="unbounded" minOccurs="1">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="Nev" type="xs:string" />
-                                        <xs:element name="Cim">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="Iranyitoszam"
-                                                        type="xs:integer" />
-                                                    <xs:element name="Telepules" type="xs:string" />
-                                                    <xs:element name="Utca" type="xs:string" />
-                                                    <xs:element name="Hazszam" type="xs:string" />
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                    <xs:attribute type="xs:integer" name="aruhazid" use="required" />
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
 
-                <xs:element name="Beszallitok">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Beszallito" maxOccurs="unbounded" minOccurs="1">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="Nev" type="xs:string" />
-                                        <xs:element name="Termek_kategoria" type="xs:string" />
-                                        <xs:element name="Atlagos_szallitasi_ido">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                    <xs:extension base="xs:integer">
-                                                        <xs:attribute name="mertekegyseg">
-                                                            <xs:simpleType>
-                                                                <xs:restriction base="xs:string">
-                                                                    <xs:enumeration value="ora" />
-                                                                    <xs:enumeration value="perc" />
-                                                                    <xs:enumeration value="nap" />
-                                                                    <xs:enumeration value="het" />
-                                                                </xs:restriction>
-                                                            </xs:simpleType>
-                                                        </xs:attribute>
-                                                    </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                    <xs:attribute type="xs:integer" name="beszallitoid"
-                                        use="required" />
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+    <!-- Saját általános típusok-->
+    <xs:element name="Nev" type="xs:string" />
+    <xs:element name="Termek_kategoria" type="kategoriaType" />
+    <xs:element name="Kategoria" type="kategoriaType" />
+    <xs:element name="Darabszam" type="xs:integer" />
+    <xs:element name="Atlagos_Rendelt_Arumennyiseg" type="xs:integer" />
+    <xs:element name="Leiras" type="xs:string" />
+    <xs:attribute name="penznem" type="penznemType" />
+    <xs:attribute name="termekid" type="xs:integer" />
+    <xs:attribute name="beszallitoid" type="xs:integer" />
+    <xs:attribute name="aruhazid" type="xs:integer" />
+    <xs:attribute name="aruhazidfk" type="xs:integer" />
+    <xs:attribute name="beszallitoidfk" type="xs:integer"/>
+    <xs:attribute name="akciostermekid" type="xs:integer" />
 
-                <xs:element name="Raktarak">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Aruhaz_Raktar_Termek" maxOccurs="unbounded"
-                                minOccurs="1">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="Nev" type="xs:string" />
-                                        <xs:element name="Darabszam" type="xs:integer" />
-                                        <xs:element name="Kategoria">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:enumeration value="Elektronika" />
-                                                    <xs:enumeration value="Élelmiszer" />
-                                                    <xs:enumeration value="Építőanyag" />
-                                                    <xs:enumeration value="Gépjármű alkatrész" />
-                                                    <xs:enumeration value="Bútor" />
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                        <xs:element name="Ar">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                    <xs:extension base="xs:string">
-                                                        <xs:attribute name="penznem">
-                                                            <xs:simpleType>
-                                                                <xs:restriction base="xs:string">
-                                                                    <xs:enumeration value="huf" />
-                                                                    <xs:enumeration value="eu" />
-                                                                </xs:restriction>
-                                                            </xs:simpleType>
-                                                        </xs:attribute>
-                                                    </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                    <xs:attribute type="xs:integer" name="termekid" use="required" />
-                                </xs:complexType>
-                            </xs:element>
 
-                            <xs:element name="Beszallito_Raktar_Termek" maxOccurs="unbounded"
-                                minOccurs="1">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="Nev" type="xs:string" />
-                                        <xs:element name="Darabszam" type="xs:integer" />
-                                        <xs:element name="Kategoria">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:enumeration value="Elektronika" />
-                                                    <xs:enumeration value="Élelmiszer" />
-                                                    <xs:enumeration value="Építőanyag" />
-                                                    <xs:enumeration value="Gépjármű alkatrész" />
-                                                    <xs:enumeration value="Bútor" />
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                    <xs:attribute type="xs:integer" name="termekid" use="required" />
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+    <!-- Saját egyszerű típusok-->
+    <xs:simpleType name="mertekegysegType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="perc" />
+            <xs:enumeration value="ora" />
+        </xs:restriction>
+    </xs:simpleType>
 
-                <xs:element name="Akcios_Termekek">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Akcios_Termek" maxOccurs="unbounded" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="Nev" type="xs:string" />
-                                        <xs:element name="Leiras" type="xs:string" />
-                                        <xs:element name="Kategoria">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:enumeration value="Elektronika" />
-                                                    <xs:enumeration value="Élelmiszer" />
-                                                    <xs:enumeration value="Építőanyag" />
-                                                    <xs:enumeration value="Gépjármű alkatrész" />
-                                                    <xs:enumeration value="Bútor" />
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                        <xs:element name="Arak" maxOccurs="1">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="Eredeti_ar" minOccurs="0" maxOccurs="unbounded">
-                                                        <xs:complexType>
-                                                            <xs:simpleContent>
-                                                                <xs:extension base="xs:double">
-                                                                    <xs:attribute name="penznem">
-                                                                        <xs:simpleType>
-                                                                            <xs:restriction
-                                                                                base="xs:string">
-                                                                                <xs:enumeration
-                                                                                    value="huf" />
-                                                                                <xs:enumeration
-                                                                                    value="eu" />
-                                                                            </xs:restriction>
-                                                                        </xs:simpleType>
-                                                                    </xs:attribute>
-                                                                </xs:extension>
-                                                            </xs:simpleContent>
-                                                        </xs:complexType>
-                                                    </xs:element>
-                                                    <xs:element name="Akcios_ar" minOccurs="0" maxOccurs="unbounded">
-                                                        <xs:complexType>
-                                                            <xs:simpleContent>
-                                                                <xs:extension base="xs:double">
-                                                                    <xs:attribute name="penznem">
-                                                                        <xs:simpleType>
-                                                                            <xs:restriction
-                                                                                base="xs:string">
-                                                                                <xs:enumeration
-                                                                                    value="huf" />
-                                                                                <xs:enumeration
-                                                                                    value="eu" />
-                                                                            </xs:restriction>
-                                                                        </xs:simpleType>
-                                                                    </xs:attribute>
-                                                                </xs:extension>
-                                                            </xs:simpleContent>
-                                                        </xs:complexType>
-                                                    </xs:element>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                    <xs:attribute type="xs:integer" name="termekid" use="required" />
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+    <xs:simpleType name="kategoriaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Gépjármű alkatrész" />
+            <xs:enumeration value="Építőanyag" />
+            <xs:enumeration value="Elektronika" />
+            <xs:enumeration value="Élelmiszer" />
+            <xs:enumeration value="Bútor" />
+        </xs:restriction>
+    </xs:simpleType>
 
-            </xs:sequence>
-        </xs:complexType>
+    <xs:simpleType name="penznemType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="huf" />
+            <xs:enumeration value="eu" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <!-- Saját komplex típusok-->
+    <xs:complexType name="Atlagos_szallitasi_ido_Type">
+        <xs:simpleContent>
+            <xs:extension base="xs:integer">
+                <xs:attribute name="mertekegyseg" type="mertekegysegType" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="cimType">
+        <xs:sequence>
+            <xs:element name="Iranyitoszam" type="xs:integer" />
+            <xs:element name="Telepules" type="xs:string" />
+            <xs:element name="Utca" type="xs:string" />
+            <xs:element name="Hazszam" type="xs:integer" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EredetiAr_type">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="penznem" type="penznemType" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="AkciosAr_type">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="penznem" type="penznemType" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="Ar_type">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="penznem" type="penznemType" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="aruhazTipus">
+        <xs:sequence>
+            <xs:element ref="Nev" />
+            <xs:element name="Cim" type="cimType" />
+        </xs:sequence>
+        <xs:attribute ref="aruhazid" />
+    </xs:complexType>
+
+    <xs:complexType name="aruhazBeszallitoTipus">
+        <xs:sequence>
+            <xs:element ref="Atlagos_Rendelt_Arumennyiseg" />
+        </xs:sequence>
+        <xs:attribute ref="aruhazidfk" />
+        <xs:attribute ref="beszallitoidfk" />
+    </xs:complexType>
+
+    <xs:complexType name="ArakType">
+        <xs:sequence>
+            <xs:element name="Eredeti_ar" type="EredetiAr_type" maxOccurs="2" />
+            <xs:element name="Akcios_ar" type="AkciosAr_type" maxOccurs="2" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="beszallitoTipus">
+        <xs:sequence>
+            <xs:element ref="Nev" />
+            <xs:element ref="Termek_kategoria" />
+            <xs:element name="Atlagos_szallitasi_ido" type="Atlagos_szallitasi_ido_Type" />
+        </xs:sequence>
+        <xs:attribute ref="beszallitoid" />
+    </xs:complexType>
+
+    <xs:complexType name="aruhazRaktarTermekTipus">
+        <xs:sequence>
+            <xs:element ref="Nev" />
+            <xs:element ref="Darabszam" />
+            <xs:element ref="Kategoria" />
+            <xs:element name="Ar" type="Ar_type" />
+        </xs:sequence>
+        <xs:attribute ref="termekid" />
+        <xs:attribute ref="aruhazidfk" />
+    </xs:complexType>
+
+    <xs:complexType name="beszallitoRaktarTermekTipus">
+        <xs:sequence>
+            <xs:element ref="Nev" />
+            <xs:element ref="Darabszam" />
+            <xs:element ref="Kategoria" />
+        </xs:sequence>
+        <xs:attribute ref="termekid" />
+        <xs:attribute ref="beszallitoidfk" />
+    </xs:complexType>
+
+    <xs:complexType name="akciosTermekTipus">
+        <xs:sequence>
+            <xs:element ref="Nev" />
+            <xs:element ref="Leiras" />
+            <xs:element ref="Kategoria" />
+            <xs:element name="Arak" type="ArakType" />
+        </xs:sequence>
+        <xs:attribute ref="termekid" />
+        <xs:attribute ref="akciostermekid" />
+    </xs:complexType>
+
+    <!--Közrefogó
+    komplex típusok-->
+
+    <xs:complexType name="AruhazakTipus">
+        <xs:sequence>
+            <xs:element name="Aruhaz" type="aruhazTipus" minOccurs="3" maxOccurs="unbounded">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="BeszallitokTipus">
+        <xs:sequence>
+            <xs:element name="Beszallito" type="beszallitoTipus" minOccurs="3" maxOccurs="unbounded">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RaktarakTipus">
+        <xs:sequence>
+            <xs:element name="Aruhaz_Raktar_Termek" type="aruhazRaktarTermekTipus" minOccurs="3"
+                maxOccurs="unbounded" />
+            <xs:element name="Beszallito_Raktar_Termek" type="beszallitoRaktarTermekTipus"
+                minOccurs="3" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Akcios_TermekekTipus">
+        <xs:sequence>
+            <xs:element name="Akcios_Termek" type="akciosTermekTipus" minOccurs="3"
+                maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Gyökérelem típusa-->
+    <xs:complexType name="Aruhaz-beszallito_AQYO8LType">
+        <xs:sequence>
+            <xs:element name="Aruhazak" type="AruhazakTipus" />
+            <xs:element name="Beszallitok" type="BeszallitokTipus" />
+            <xs:element name="Aruhaz-Beszallito" type="aruhazBeszallitoTipus" minOccurs="3"
+                maxOccurs="unbounded" />
+            <xs:element name="Raktarak" type="RaktarakTipus" />
+            <xs:element name="Akcios_Termekek" type="Akcios_TermekekTipus" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--Gyökérelem
+    definíciója-->
+    <xs:element name="Aruhaz-beszallito_AQYO8L" type="Aruhaz-beszallito_AQYO8LType">
+
+        <!-- Elsődleges kulcsok-->
+        <xs:key name="AruhazKulcs">
+            <xs:selector xpath="Aruhaz" />
+            <xs:field xpath="@aruhazid" />
+        </xs:key>
+
+        <xs:key name="BeszallitoKulcs">
+            <xs:selector xpath="Beszallito" />
+            <xs:field xpath="@beszallitoid" />
+        </xs:key>
+
+        <xs:key name="BeszallitoTermekKulcs">
+            <xs:selector xpath="Beszallito_Raktar_Termek" />
+            <xs:field xpath="@termekid" />
+        </xs:key>
+
+        <xs:key name="AruhazTermekKulcs">
+            <xs:selector xpath="Aruhaz_Raktar_termek" />
+            <xs:field xpath="@termekid" />
+        </xs:key>
+
+        <xs:key name="AkciosTermekKulcs">
+            <xs:selector xpath="Akcios_Termek" />
+            <xs:field xpath="@akciostermekid" />
+        </xs:key>
+
+        <!--Idegen
+        kulcsok-->
+        <xs:keyref name="Aruhaz-Raktar" refer="AruhazKulcs">
+            <xs:selector xpath="Aruhaz_Raktar_Termek" />
+            <xs:field xpath="@aruhazidfk" />
+        </xs:keyref>
+
+        <xs:keyref name="AkciosTermek-Raktar" refer="AruhazTermekKulcs">
+            <xs:selector xpath="Akcios_Termek" />
+            <xs:field xpath="@termekid" />
+        </xs:keyref>
+
+        <xs:keyref name="Beszallito-Raktar" refer="BeszallitoKulcs">
+            <xs:selector xpath="Beszallito_Raktar_Termek" />
+            <xs:field xpath="@beszallitoidfk" />
+        </xs:keyref>
+
+        <xs:keyref name="Aruhaz-BeszallitoAruhaz" refer="AruhazKulcs">
+            <xs:selector xpath="Aruhaz-Beszallito" />
+            <xs:field xpath="@aruhazid" />
+        </xs:keyref>
+
+        <xs:keyref name="Aruhaz-BeszallitoBeszallito" refer="BeszallitoKulcs">
+            <xs:selector xpath="Aruhaz-Beszallito" />
+            <xs:field xpath="@beszallitoid" />
+        </xs:keyref>
+
+
+        <!-- Egy-egy (1:1) kapcsolat kulcs-->
+        <xs:unique name="Beszallito-RaktarTermek_Kapcsolat">
+            <xs:selector xpath="Beszallito_Raktar_Termek" />
+            <xs:field xpath="@beszallitoidfk" />
+        </xs:unique>
+
+        <xs:unique name="Aruhaz-RaktarTermek_Kapcsolat">
+            <xs:selector xpath="Aruhaz_Raktar_Termek" />
+            <xs:field xpath="@aruhazidfk" />
+        </xs:unique>
+
     </xs:element>
+
+
 </xs:schema>

@@ -60,21 +60,33 @@
         </Beszallito>
     </Beszallitok>
 
+    <Aruhaz-Beszallito aruhazidfk="1" beszallitoidfk="2">
+        <Atlagos_Rendelt_Arumennyiseg>2</Atlagos_Rendelt_Arumennyiseg>
+    </Aruhaz-Beszallito>
+
+    <Aruhaz-Beszallito aruhazidfk="2" beszallitoidfk="3">
+        <Atlagos_Rendelt_Arumennyiseg>15</Atlagos_Rendelt_Arumennyiseg>
+    </Aruhaz-Beszallito>
+
+    <Aruhaz-Beszallito aruhazidfk="3" beszallitoidfk="1">
+        <Atlagos_Rendelt_Arumennyiseg>8</Atlagos_Rendelt_Arumennyiseg>
+    </Aruhaz-Beszallito>
+
     <Raktarak>
         <!-- Áruház raktárak és adataik-->
-        <Aruhaz_Raktar_Termek termekid="1">
+        <Aruhaz_Raktar_Termek termekid="1" aruhazidfk="1">
             <Nev>Rántotthús</Nev>
             <Darabszam>2</Darabszam>
             <Kategoria>Élelmiszer</Kategoria>
             <Ar penznem="huf">1200</Ar>
         </Aruhaz_Raktar_Termek>
-        <Aruhaz_Raktar_Termek termekid="2">
+        <Aruhaz_Raktar_Termek termekid="2" aruhazidfk="1">
             <Nev>Tej</Nev>
             <Darabszam>10</Darabszam>
             <Kategoria>Élelmiszer</Kategoria>
             <Ar penznem="huf">300</Ar>
         </Aruhaz_Raktar_Termek>
-        <Aruhaz_Raktar_Termek termekid="3">
+        <Aruhaz_Raktar_Termek termekid="3" aruhazidfk="2">
             <Nev>Asztal</Nev>
             <Darabszam>5</Darabszam>
             <Kategoria>Bútor</Kategoria>
@@ -82,17 +94,17 @@
         </Aruhaz_Raktar_Termek>
 
         <!-- Beszállító raktárak és adataik-->
-        <Beszallito_Raktar_Termek termekid="1">
+        <Beszallito_Raktar_Termek termekid="1" beszallitoidfk="1">
             <Nev>Autóalkatrész</Nev>
             <Darabszam>50</Darabszam>
             <Kategoria>Gépjármű alkatrész</Kategoria>
         </Beszallito_Raktar_Termek>
-        <Beszallito_Raktar_Termek termekid="2">
+        <Beszallito_Raktar_Termek termekid="2" beszallitoidfk="2">
             <Nev>Csempe</Nev>
             <Darabszam>100</Darabszam>
             <Kategoria>Építőanyag</Kategoria>
         </Beszallito_Raktar_Termek>
-        <Beszallito_Raktar_Termek termekid="3">
+        <Beszallito_Raktar_Termek termekid="3" beszallitoidfk="3">
             <Nev>Laptop</Nev>
             <Darabszam>20</Darabszam>
             <Kategoria>Elektronika</Kategoria>
@@ -101,7 +113,7 @@
 
     <Akcios_Termekek>
         <!-- Akciós termékek és adataik-->
-        <Akcios_Termek termekid="1">
+        <Akcios_Termek termekid="1" akciostermekid="1">
             <Nev>Farhát</Nev>
             <Leiras>Finom farhát</Leiras>
             <Kategoria>Élelmiszer</Kategoria>
@@ -112,7 +124,7 @@
                 <Akcios_ar penznem="eu">3.75</Akcios_ar>
             </Arak>
         </Akcios_Termek>
-        <Akcios_Termek termekid="2">
+        <Akcios_Termek termekid="2" akciostermekid="2">
             <Nev>Tej</Nev>
             <Leiras>Friss tej</Leiras>
             <Kategoria>Élelmiszer</Kategoria>
@@ -123,7 +135,7 @@
                 <Akcios_ar penznem="eu">0.85</Akcios_ar>
             </Arak>
         </Akcios_Termek>
-        <Akcios_Termek termekid="3">
+        <Akcios_Termek termekid="3" akciostermekid="3">
             <Nev>Asztal</Nev>
             <Leiras>Igényes asztal</Leiras>
             <Kategoria>Bútor</Kategoria>
@@ -135,7 +147,7 @@
             </Arak>
 
         </Akcios_Termek>
-        <Akcios_Termek termekid="4">
+        <Akcios_Termek termekid="4" akciostermekid="4">
             <Nev>Autóalkatrész</Nev>
             <Leiras>Minőségi alkatrész</Leiras>
             <Kategoria>Gépjármű alkatrész</Kategoria>
@@ -146,7 +158,7 @@
                 <Akcios_ar penznem="eu">15.3</Akcios_ar>
             </Arak>
         </Akcios_Termek>
-        <Akcios_Termek termekid="5">
+        <Akcios_Termek termekid="5" akciostermekid="5">
             <Nev>Csempe</Nev>
             <Leiras>Stílusos csempe</Leiras>
             <Kategoria>Építőanyag</Kategoria>
