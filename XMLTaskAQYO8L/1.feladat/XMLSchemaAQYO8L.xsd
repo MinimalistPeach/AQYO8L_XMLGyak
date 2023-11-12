@@ -12,8 +12,6 @@
     <xs:attribute name="termekid" type="xs:integer" />
     <xs:attribute name="beszallitoid" type="xs:integer" />
     <xs:attribute name="aruhazid" type="xs:integer" />
-    <xs:attribute name="aruhazidfk" type="xs:integer" />
-    <xs:attribute name="beszallitoidfk" type="xs:integer"/>
     <xs:attribute name="akciostermekid" type="xs:integer" />
 
 
@@ -97,8 +95,8 @@
         <xs:sequence>
             <xs:element ref="Atlagos_Rendelt_Arumennyiseg" />
         </xs:sequence>
-        <xs:attribute ref="aruhazidfk" />
-        <xs:attribute ref="beszallitoidfk" />
+        <xs:attribute ref="aruhazid" />
+        <xs:attribute ref="beszallitoid" />
     </xs:complexType>
 
     <xs:complexType name="ArakType">
@@ -125,7 +123,7 @@
             <xs:element name="Ar" type="Ar_type" />
         </xs:sequence>
         <xs:attribute ref="termekid" />
-        <xs:attribute ref="aruhazidfk" />
+        <xs:attribute ref="aruhazid" />
     </xs:complexType>
 
     <xs:complexType name="beszallitoRaktarTermekTipus">
@@ -135,7 +133,7 @@
             <xs:element ref="Kategoria" />
         </xs:sequence>
         <xs:attribute ref="termekid" />
-        <xs:attribute ref="beszallitoidfk" />
+        <xs:attribute ref="beszallitoid" />
     </xs:complexType>
 
     <xs:complexType name="akciosTermekTipus">
@@ -200,27 +198,27 @@
 
         <!-- Elsődleges kulcsok-->
         <xs:key name="AruhazKulcs">
-            <xs:selector xpath="Aruhaz" />
+            <xs:selector xpath="Aruhazak/Aruhaz" />
             <xs:field xpath="@aruhazid" />
         </xs:key>
 
         <xs:key name="BeszallitoKulcs">
-            <xs:selector xpath="Beszallito" />
+            <xs:selector xpath="Beszallitok/Beszallito" />
             <xs:field xpath="@beszallitoid" />
         </xs:key>
 
         <xs:key name="BeszallitoTermekKulcs">
-            <xs:selector xpath="Beszallito_Raktar_Termek" />
+            <xs:selector xpath="Raktarak/Beszallito_Raktar_Termek" />
             <xs:field xpath="@termekid" />
         </xs:key>
 
         <xs:key name="AruhazTermekKulcs">
-            <xs:selector xpath="Aruhaz_Raktar_termek" />
+            <xs:selector xpath="Raktarak/Aruhaz_Raktar_termek" />
             <xs:field xpath="@termekid" />
         </xs:key>
 
         <xs:key name="AkciosTermekKulcs">
-            <xs:selector xpath="Akcios_Termek" />
+            <xs:selector xpath="Akcios_Termekek/Akcios_Termek" />
             <xs:field xpath="@akciostermekid" />
         </xs:key>
 
@@ -228,7 +226,7 @@
         kulcsok-->
         <xs:keyref name="Aruhaz-Raktar" refer="AruhazKulcs">
             <xs:selector xpath="Aruhaz_Raktar_Termek" />
-            <xs:field xpath="@aruhazidfk" />
+            <xs:field xpath="@aruhazid" />
         </xs:keyref>
 
         <xs:keyref name="AkciosTermek-Raktar" refer="AruhazTermekKulcs">
@@ -238,7 +236,7 @@
 
         <xs:keyref name="Beszallito-Raktar" refer="BeszallitoKulcs">
             <xs:selector xpath="Beszallito_Raktar_Termek" />
-            <xs:field xpath="@beszallitoidfk" />
+            <xs:field xpath="@beszallitoid" />
         </xs:keyref>
 
         <xs:keyref name="Aruhaz-BeszallitoAruhaz" refer="AruhazKulcs">
@@ -255,12 +253,12 @@
         <!-- Egy-egy (1:1) kapcsolat kulcs-->
         <xs:unique name="Beszallito-RaktarTermek_Kapcsolat">
             <xs:selector xpath="Beszallito_Raktar_Termek" />
-            <xs:field xpath="@beszallitoidfk" />
+            <xs:field xpath="@beszallitoid" />
         </xs:unique>
 
         <xs:unique name="Aruhaz-RaktarTermek_Kapcsolat">
             <xs:selector xpath="Aruhaz_Raktar_Termek" />
-            <xs:field xpath="@aruhazidfk" />
+            <xs:field xpath="@aruhazid" />
         </xs:unique>
 
     </xs:element>
