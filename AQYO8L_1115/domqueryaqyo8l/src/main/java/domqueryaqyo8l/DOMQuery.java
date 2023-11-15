@@ -18,6 +18,7 @@ public class DOMQuery {
     public static void main(String[] args) {
         List<String> kurzusList = new ArrayList<>();
         List<String> hallgatoList = new ArrayList<>();
+        List<String> oktatoList = new ArrayList<>();
         try {
             File inputFile = new File(
                     "AQYO8L_1115\\domqueryaqyo8l\\src\\main\\java\\domqueryaqyo8l\\AQYO8L_kurzusfelvetel.xml");
@@ -82,6 +83,15 @@ public class DOMQuery {
             DOMSource source = new DOMSource(newDoc);
             StreamResult result = new StreamResult(new File("AQYO8L_1115\\domqueryaqyo8l\\src\\main\\java\\domqueryaqyo8l\\AQYO8L_hallgato.xml"));
             transformer.transform(source, result);
+
+            NodeList oktatoNodeList = doc.getElementsByTagName("oktato");
+            for (int i = 0; i < oktatoNodeList.getLength(); i++) {
+                Element oktatoElement = (Element) oktatoNodeList.item(i);
+                String oktato = oktatoElement.getTextContent();
+                oktatoList.add(oktato);
+                System.out.println(oktato);
+            }
+
 
         } catch (Exception e) {
             e.printStackTrace();

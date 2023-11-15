@@ -3,12 +3,12 @@
 
     <!-- Saját általános típusok-->
     <xs:element name="Nev" type="xs:string" />
-    <xs:element name="Termek_kategoria" type="kategoriaType" />
-    <xs:element name="Kategoria" type="kategoriaType" />
+    <xs:element name="Termek_kategoria" type="kategoriaTipus" />
+    <xs:element name="Kategoria" type="kategoriaTipus" />
     <xs:element name="Darabszam" type="xs:integer" />
     <xs:element name="Atlagos_Rendelt_Arumennyiseg" type="xs:integer" />
     <xs:element name="Leiras" type="xs:string" />
-    <xs:attribute name="penznem" type="penznemType" />
+    <xs:attribute name="penznem" type="penznemTipus" />
     <xs:attribute name="termekid" type="xs:integer" />
     <xs:attribute name="beszallitoid" type="xs:integer" />
     <xs:attribute name="aruhazid" type="xs:integer" />
@@ -16,14 +16,14 @@
 
 
     <!-- Saját egyszerű típusok-->
-    <xs:simpleType name="mertekegysegType">
+    <xs:simpleType name="mertekegysegTipus">
         <xs:restriction base="xs:string">
             <xs:enumeration value="perc" />
             <xs:enumeration value="ora" />
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="kategoriaType">
+    <xs:simpleType name="kategoriaTipus">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Gépjármű alkatrész" />
             <xs:enumeration value="Építőanyag" />
@@ -33,7 +33,7 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="penznemType">
+    <xs:simpleType name="penznemTipus">
         <xs:restriction base="xs:string">
             <xs:enumeration value="huf" />
             <xs:enumeration value="eu" />
@@ -42,15 +42,15 @@
 
 
     <!-- Saját komplex típusok-->
-    <xs:complexType name="Atlagos_szallitasi_ido_Type">
+    <xs:complexType name="Atlagos_szallitasi_ido_Tipus">
         <xs:simpleContent>
             <xs:extension base="xs:integer">
-                <xs:attribute name="mertekegyseg" type="mertekegysegType" />
+                <xs:attribute name="mertekegyseg" type="mertekegysegTipus" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="cimType">
+    <xs:complexType name="cimTipus">
         <xs:sequence>
             <xs:element name="Iranyitoszam" type="xs:integer" />
             <xs:element name="Telepules" type="xs:string" />
@@ -62,7 +62,7 @@
     <xs:complexType name="EredetiAr_type">
         <xs:simpleContent>
             <xs:extension base="xs:float">
-                <xs:attribute name="penznem" type="penznemType" />
+                <xs:attribute name="penznem" type="penznemTipus" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -70,7 +70,7 @@
     <xs:complexType name="AkciosAr_type">
         <xs:simpleContent>
             <xs:extension base="xs:float">
-                <xs:attribute name="penznem" type="penznemType" />
+                <xs:attribute name="penznem" type="penznemTipus" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -78,7 +78,7 @@
     <xs:complexType name="Ar_type">
         <xs:simpleContent>
             <xs:extension base="xs:float">
-                <xs:attribute name="penznem" type="penznemType" />
+                <xs:attribute name="penznem" type="penznemTipus" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -86,7 +86,7 @@
     <xs:complexType name="aruhazTipus">
         <xs:sequence>
             <xs:element ref="Nev" />
-            <xs:element name="Cim" type="cimType" />
+            <xs:element name="Cim" type="cimTipus" />
         </xs:sequence>
         <xs:attribute ref="aruhazid" />
     </xs:complexType>
@@ -99,7 +99,7 @@
         <xs:attribute ref="beszallitoid" />
     </xs:complexType>
 
-    <xs:complexType name="ArakType">
+    <xs:complexType name="ArakTipus">
         <xs:sequence>
             <xs:element name="Eredeti_ar" type="EredetiAr_type" maxOccurs="2" />
             <xs:element name="Akcios_ar" type="AkciosAr_type" maxOccurs="2" />
@@ -110,7 +110,7 @@
         <xs:sequence>
             <xs:element ref="Nev" />
             <xs:element ref="Termek_kategoria" />
-            <xs:element name="Atlagos_szallitasi_ido" type="Atlagos_szallitasi_ido_Type" />
+            <xs:element name="Atlagos_szallitasi_ido" type="Atlagos_szallitasi_ido_Tipus" />
         </xs:sequence>
         <xs:attribute ref="beszallitoid" />
     </xs:complexType>
@@ -141,7 +141,7 @@
             <xs:element ref="Nev" />
             <xs:element ref="Leiras" />
             <xs:element ref="Kategoria" />
-            <xs:element name="Arak" type="ArakType" />
+            <xs:element name="Arak" type="ArakTipus" />
         </xs:sequence>
         <xs:attribute ref="termekid" />
         <xs:attribute ref="akciostermekid" />
@@ -181,7 +181,7 @@
     </xs:complexType>
 
     <!-- Gyökérelem típusa-->
-    <xs:complexType name="Aruhaz-beszallito_AQYO8LType">
+    <xs:complexType name="Aruhaz-beszallito_AQYO8LTipus">
         <xs:sequence>
             <xs:element name="Aruhazak" type="AruhazakTipus" />
             <xs:element name="Beszallitok" type="BeszallitokTipus" />
@@ -194,7 +194,7 @@
 
     <!--Gyökérelem
     definíciója-->
-    <xs:element name="Aruhaz-beszallito_AQYO8L" type="Aruhaz-beszallito_AQYO8LType">
+    <xs:element name="Aruhaz-beszallito_AQYO8L" type="Aruhaz-beszallito_AQYO8LTipus">
 
         <!-- Elsődleges kulcsok-->
         <xs:key name="AruhazKulcs">
