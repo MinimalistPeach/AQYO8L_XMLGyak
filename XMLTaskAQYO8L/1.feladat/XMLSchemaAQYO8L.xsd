@@ -30,6 +30,8 @@
             <xs:enumeration value="Elektronika" />
             <xs:enumeration value="Élelmiszer" />
             <xs:enumeration value="Bútor" />
+            <xs:enumeration value="Üdítő" />
+            <xs:enumeration value="Kávé" />
         </xs:restriction>
     </xs:simpleType>
 
