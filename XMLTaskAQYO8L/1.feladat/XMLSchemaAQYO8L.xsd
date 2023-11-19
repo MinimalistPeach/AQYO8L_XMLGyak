@@ -59,7 +59,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="EredetiAr_type">
+    <xs:complexType name="EredetiAr_Tipus">
         <xs:simpleContent>
             <xs:extension base="xs:float">
                 <xs:attribute name="penznem" type="penznemTipus" />
@@ -67,7 +67,7 @@
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="AkciosAr_type">
+    <xs:complexType name="AkciosAr_Tipus">
         <xs:simpleContent>
             <xs:extension base="xs:float">
                 <xs:attribute name="penznem" type="penznemTipus" />
@@ -75,7 +75,7 @@
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="Ar_type">
+    <xs:complexType name="Ar_Tipus">
         <xs:simpleContent>
             <xs:extension base="xs:float">
                 <xs:attribute name="penznem" type="penznemTipus" />
@@ -101,8 +101,8 @@
 
     <xs:complexType name="ArakTipus">
         <xs:sequence>
-            <xs:element name="Eredeti_ar" type="EredetiAr_type" maxOccurs="2" />
-            <xs:element name="Akcios_ar" type="AkciosAr_type" maxOccurs="2" />
+            <xs:element name="Eredeti_ar" type="EredetiAr_Tipus" maxOccurs="2" />
+            <xs:element name="Akcios_ar" type="AkciosAr_Tipus" maxOccurs="2" />
         </xs:sequence>
     </xs:complexType>
 
@@ -120,7 +120,7 @@
             <xs:element ref="Nev" />
             <xs:element ref="Darabszam" />
             <xs:element ref="Kategoria" />
-            <xs:element name="Ar" type="Ar_type" />
+            <xs:element name="Ar" type="Ar_Tipus" />
         </xs:sequence>
         <xs:attribute ref="termekid" />
         <xs:attribute ref="aruhazid" />

@@ -1,4 +1,4 @@
-package AQYO8L_1115.domqueryaqyo8l.src.main.java.domqueryaqyo8l;
+package domqueryaqyo8l;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class DOMQuery {
             Document doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
             NodeList kurzusNodeList = doc.getElementsByTagName("kurzusnev");
-            System.out.print("Kurzus: [");
+            System.out.print("Kurzusnév: [");
             for (int i = 0; i < kurzusNodeList.getLength(); i++) {
                 Element kurzusElement = (Element) kurzusNodeList.item(i);
                 String kurzus = kurzusElement.getTextContent();
