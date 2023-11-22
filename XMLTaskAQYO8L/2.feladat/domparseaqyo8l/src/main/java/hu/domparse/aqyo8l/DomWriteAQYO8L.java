@@ -1,6 +1,10 @@
 package hu.domparse.aqyo8l;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.StringWriter;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -14,26 +18,23 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class DomModifyAQYO8L {
-    public static void main(String args) {
+public class DomWriteAQYO8L {
+    public static void main(String args[]) {
         try {
             // DocumentBuilder inicializálása
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             // Dokumentum beolvasása
             Document document = builder.parse("XMLTaskAQYO8L\\1.feladat\\XMLAQYO8L.xml");
+            document.getDocumentElement().normalize();
 
-            // Dokumentum módosítása
-            modifyNodes(document);
-
-            // Dokumentum kiírása a konzolra a módosítás után
+            // Dokumentum kiírása a konzolra
             printXML(document);
 
+            // Dokumentum kiírása fájlba
+            writeXMLToFile(document, "XMLTaskAQYO8L\\2.feladat\\domparseaqyo8l\\src\\main\\java\\hu\\domparse\\aqyo8l\\XMLAQYO8L_2.xml");
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
@@ -61,42 +62,29 @@ public class DomModifyAQYO8L {
         }
     }
 
-    private static void modifyNodes(Document document) {
-        // Lekéri az összes Aruhaz node-ot
-        NodeList aruhazNodeList = document.getElementsByTagName("Aruhaz");
+    private static void writeXMLToFile(Document doc, String filePath) {
+        try {
+            // TransformerFactory és Transformer osztályok példányosítása
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
 
-        // Végigiterál a node-okon
-        for (int i = 0; i < aruhazNodeList.getLength(); i++) {
-            Node node = aruhazNodeList.item(i);
+            // Behúzás beállítása a transformerben
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            // A DOM forrásának beállítása
+            DOMSource source = new DOMSource(doc);
 
-            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                Element element = (Element) node;
+            // Üres fájl létrehozása
+            File outputFile = new File(filePath);
 
-                // Lekéri a Nev node-ot
-                Node aruhazNevNode = element.getElementsByTagName("Nev").item(0);
+            // Fájl írási csatornájának létrehozása
+            OutputStream outputStream = new FileOutputStream(outputFile);
+            StreamResult fileResult = new StreamResult(outputStream);
 
-                // Módosítja a node értékét
-                aruhazNevNode.setTextContent("Aruhaz" + (i + 1));
-            }
+            // A transformer segítéségével a DOM forrás kiírása a fájlba
+            transformer.transform(source, fileResult);
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-         // Lekéri az összes Beszallito node-ot
-        NodeList beszallitoNodeList = document.getElementsByTagName("Beszallito");
-
-        // Végigiterál a node-okon
-        for (int i = 0; i < beszallitoNodeList.getLength(); i++) {
-            Node node = beszallitoNodeList.item(i);
-
-            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                Element element = (Element) node;
-
-                // Lekéri a Nev node-ot
-                Node beszallitoNevNode = element.getElementsByTagName("Nev").item(0);
-
-                // Módosítja a node értékét
-                beszallitoNevNode.setTextContent("Beszallito" + (i + 1));
-            }
-        }
-        
     }
 }

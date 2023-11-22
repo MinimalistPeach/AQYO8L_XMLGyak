@@ -13,7 +13,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 
 public class DomQueryAQYO8L {
-    public static void start() {
+    public static void main(String args[]) {
         try {
             // DocumentBuilder inicializálása
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
