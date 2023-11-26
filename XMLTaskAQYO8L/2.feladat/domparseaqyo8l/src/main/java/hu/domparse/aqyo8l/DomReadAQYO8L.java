@@ -51,6 +51,9 @@ public class DomReadAQYO8L {
             // Raktárak beolvasása
             readRaktarak(doc);
 
+            // Akciós termékek beolvasása
+            readAkciosTermekek(doc);
+
             System.out.println("</Aruhaz-beszallito_AQYO8L>");
 
         } catch (Exception e) {
@@ -191,8 +194,9 @@ public class DomReadAQYO8L {
                     String kategoria = beszallitoRaktarElement.getElementsByTagName("Kategoria").item(0)
                             .getTextContent();
 
-                    System.out.println("        <Beszallito_Raktar_Termek beszallitoid=\"" + beszallitoid + "\" termekid=\""
-                            + termekid + "\">");
+                    System.out.println(
+                            "        <Beszallito_Raktar_Termek beszallitoid=\"" + beszallitoid + "\" termekid=\""
+                                    + termekid + "\">");
                     printElement("Nev", nev);
                     printElement("Darabszam", darabszam);
                     printElement("Kategoria", kategoria);
@@ -201,5 +205,59 @@ public class DomReadAQYO8L {
             }
             System.out.println("  </Raktarak>");
         }
+    }
+
+    // Akciós termékeket beolvasó metódus
+    private static void readAkciosTermekek(Document document) {
+        NodeList akciosTermekekList = document.getElementsByTagName("Akcios_Termek");
+        System.out.println("  <Akcios_Termekek>");
+        for (int temp = 0; temp < akciosTermekekList.getLength(); temp++) {
+            Node node = akciosTermekekList.item(temp);
+            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                Element akciosTermekElement = (Element) node;
+                String termekid = akciosTermekElement.getAttribute("termekid");
+                String akciostermekid = akciosTermekElement.getAttribute("akciostermekid");
+                String nev = akciosTermekElement.getElementsByTagName("Nev").item(0).getTextContent();
+                String leiras = akciosTermekElement.getElementsByTagName("Leiras").item(0).getTextContent();
+                String kategoria = akciosTermekElement.getElementsByTagName("Kategoria").item(0).getTextContent();
+
+                NodeList eredetiArList = akciosTermekElement.getElementsByTagName("Eredeti_ar");
+                NodeList akciosArList = akciosTermekElement.getElementsByTagName("Akcios_ar");
+
+                System.out.println("        <Akcios_Termek termekid=\"" + termekid + "\" akciostermekid=\""
+                        + akciostermekid + "\">");
+                printElement("Nev", nev);
+                printElement("Leiras", leiras);
+                printElement("Kategoria", kategoria);
+                
+                System.out.println("            <Arak>");
+
+                for (int temp2 = 0; temp2 < eredetiArList.getLength(); temp2++) {
+                    Node node2 = eredetiArList.item(temp2);
+                    if (node2.getNodeType() == Node.ELEMENT_NODE) {
+                        Element eredetiAr = (Element) node2;
+                        String penznem = eredetiAr.getAttribute("penznem");
+                        String ar = eredetiAr.getTextContent();
+                        System.out.println("                <Eredeti_ar penznem=\"" + penznem + "\">" + ar + "</Eredeti_ar>");
+                    }
+                }
+
+                for (int temp3 = 0; temp3 < akciosArList.getLength(); temp3++) {
+                    Node node3 = akciosArList.item(temp3);
+                    if (node3.getNodeType() == Node.ELEMENT_NODE) {
+                        Element akciosAr = (Element) node3;
+                        String penznem = akciosAr.getAttribute("penznem");
+                        String ar = akciosAr.getTextContent();
+                        System.out.println("                <Akcios_ar penznem=\"" + penznem + "\">" + ar + "</Akcios_ar>");
+                    }
+                }
+
+                System.out.println("            </Arak>");
+
+
+                System.out.println("       </Akcios_Termek>");
+            }
+        }
+        System.out.println("  </Akcios_Termekek>");
     }
 }
