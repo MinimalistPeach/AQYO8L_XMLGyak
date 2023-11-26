@@ -25,6 +25,7 @@ public class DomReadAQYO8L {
             Document doc = builder.parse(file);
             doc.getDocumentElement().normalize();
 
+            //Kimeneti fájl inicializálása
             PrintWriter outfile = new PrintWriter(new File("XMLTaskAQYO8L\\2.feladat\\XMLAQYO8L_1.xml"), "UTF-8");
 
             // XML adatok kiírása
@@ -48,8 +49,10 @@ public class DomReadAQYO8L {
             // Akciós termékek beolvasása
             readAkciosTermekek(doc, outfile);
 
+            // XML gyökérelem lezárása
             printToFileAndConsole("</Aruhaz-beszallito_AQYO8L>", System.out, outfile);
 
+            // Kimeneti fájl lezárása
             outfile.close();
 
         } catch (Exception e) {
@@ -57,17 +60,19 @@ public class DomReadAQYO8L {
         }
     }
 
+    // Kiíró metódus
     private static void printToFileAndConsole(final String msg, PrintStream console, PrintWriter file) {
         console.println(msg);
         file.println(msg);
     }
 
-    // Elem kiíró metódus
+    // Eleme kiírás formázó metódus
     private static void printElement(String elementName, String content, PrintWriter file) {
         printToFileAndConsole("                <" + elementName + ">" + content + "</" + elementName + ">", System.out,
                 file);
     }
 
+    // Cím kiírás formázó metódus
     private static void printCim(Element cimElement, PrintWriter file) {
         printToFileAndConsole("                <" + cimElement.getNodeName() + ">", System.out, file);
         printToFileAndConsole(
