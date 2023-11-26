@@ -39,6 +39,20 @@ public class DomReadAQYO8L {
             System.out.println(
                     "<Aruhaz-beszallito_AQYO8L xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"XMLSchemaAQYO8L.xsd\">\n");
 
+            // Áruházak beolvasása
+            readAruhaz(doc);
+
+            // Beszállítók beolvasása
+            readBeszallito(doc);
+
+            // Áruház-Beszállító kapcsolatok beolvasása
+            readAruhazBeszallito(doc);
+
+            // Raktárak beolvasása
+            readRaktarak(doc);
+
+            System.out.println("</Aruhaz-beszallito_AQYO8L>");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -84,9 +98,8 @@ public class DomReadAQYO8L {
                 printCim(cimElement);
                 System.out.println("        </Aruhaz>");
             }
-
-            System.out.println("    </Aruhazak>");
         }
+        System.out.println("   </Aruhazak>");
     }
 
     // Beszállítókat beolvasó metódus
@@ -143,21 +156,50 @@ public class DomReadAQYO8L {
     private static void readRaktarak(Document document) {
         NodeList aruhazRaktarTermekList = document.getElementsByTagName("Aruhaz_Raktar_Termek");
         NodeList beszallitoRaktarTermekList = document.getElementsByTagName("Beszallito_Raktar_Termek");
-
-        for (int temp = 0; temp < aruhazBeszallitoList.getLength(); temp++) {
-            Node node = aruhazBeszallitoList.item(temp);
+        System.out.println("  <Raktarak>");
+        for (int temp = 0; temp < aruhazRaktarTermekList.getLength(); temp++) {
+            Node node = aruhazRaktarTermekList.item(temp);
             if (node.getNodeType() == Node.ELEMENT_NODE) {
-                Element aruhazBeszallitoElement = (Element) node;
-                String atlagos_Rendelt_Arumennyiseg = aruhazBeszallitoElement
-                        .getElementsByTagName("Atlagos_Rendelt_Arumennyiseg").item(0).getTextContent();
-                String beszallitoid = aruhazBeszallitoElement.getAttribute("beszallitoid");
-                String aruhazid = aruhazBeszallitoElement.getAttribute("aruhazid");
+                Element aruhaRaktarElement = (Element) node;
+                String termekid = aruhaRaktarElement.getAttribute("termekid");
+                String aruhazid = aruhaRaktarElement.getAttribute("aruhazid");
+                String nev = aruhaRaktarElement.getElementsByTagName("Nev").item(0).getTextContent();
+                String darabszam = aruhaRaktarElement.getElementsByTagName("Darabszam").item(0).getTextContent();
+                String kategoria = aruhaRaktarElement.getElementsByTagName("Kategoria").item(0).getTextContent();
+                Element arElement = (Element) aruhaRaktarElement.getElementsByTagName("Ar").item(0);
+                String ar = arElement.getTextContent();
+                String penznem = arElement.getAttribute("penznem");
 
-                System.out.println("        <Aruhaz-Beszallito aruhazid=\"" + aruhazid + "\" beszallitoid=\""
-                        + beszallitoid + "\">");
-                printElement("Atlagos_Rendelt_Arumennyiseg", atlagos_Rendelt_Arumennyiseg);
-                System.out.println("       </Aruhaz-Beszallito>");
+                System.out.println("        <Aruhaz_Raktar_Termek aruhazid=\"" + aruhazid + "\" termekid=\""
+                        + termekid + "\">");
+                printElement("Nev", nev);
+                printElement("Darabszam", darabszam);
+                printElement("Kategoria", kategoria);
+                System.out.println("            <Ar penznem=\"" + penznem + "\">" + ar + "</Ar>");
+                System.out.println("       </Aruhaz_Raktar_Termek>");
             }
+
+            for (int temp2 = 0; temp < beszallitoRaktarTermekList.getLength(); temp++) {
+                Node node2 = beszallitoRaktarTermekList.item(temp2);
+                if (node2.getNodeType() == Node.ELEMENT_NODE) {
+                    Element beszallitoRaktarElement = (Element) node2;
+                    String termekid = beszallitoRaktarElement.getAttribute("termekid");
+                    String beszallitoid = beszallitoRaktarElement.getAttribute("beszallitoid");
+                    String nev = beszallitoRaktarElement.getElementsByTagName("Nev").item(0).getTextContent();
+                    String darabszam = beszallitoRaktarElement.getElementsByTagName("Darabszam").item(0)
+                            .getTextContent();
+                    String kategoria = beszallitoRaktarElement.getElementsByTagName("Kategoria").item(0)
+                            .getTextContent();
+
+                    System.out.println("        <Beszallito_Raktar_Termek beszallitoid=\"" + beszallitoid + "\" termekid=\""
+                            + termekid + "\">");
+                    printElement("Nev", nev);
+                    printElement("Darabszam", darabszam);
+                    printElement("Kategoria", kategoria);
+                    System.out.println("       </Beszallito_Raktar_Termek>");
+                }
+            }
+            System.out.println("  </Raktarak>");
         }
     }
 }
