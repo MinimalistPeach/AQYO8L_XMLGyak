@@ -2,6 +2,7 @@ package hu.domparse.aqyo8l;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.Random;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -20,7 +21,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class DomModifyAQYO8L {
-    public static void main(String args) {
+    public static void main(String args[]) {
         try {
             // DocumentBuilder inicializálása
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -77,6 +78,46 @@ public class DomModifyAQYO8L {
 
                 // Módosítja a node értékét
                 aruhazNevNode.setTextContent("Aruhaz" + (i + 1));
+            }
+        }
+         // Lekéri az összes ÁruházRaktárTermék node-ot
+        NodeList aruhazRaktarTermekNodeList = document.getElementsByTagName("Aruhaz_Raktar_Termek");
+
+        // Végigiterál a node-okon
+        for (int i = 0; i < aruhazRaktarTermekNodeList.getLength(); i++) {
+            Node node = aruhazRaktarTermekNodeList.item(i);
+
+            if (node.getNodeType() == Node.ELEMENT_NODE) {
+                Element element = (Element) node;
+
+                String newPenznem = "";
+
+                Random random = new Random();
+
+                int randomErtek = random.nextInt(2);
+
+                switch (randomErtek) {
+                    case 1:
+                        newPenznem = "EUR";
+                        break;
+
+                    case 2:
+                        newPenznem = "USD";
+                        break;
+                
+                    default:
+                        newPenznem = "CAD";
+                        break;
+                }
+
+                // Lekéri a Nev node-ot
+                Node arNode = element.getElementsByTagName("Ar").item(0);
+
+                // Node Element-té alakítása
+                Element arElement = (Element) arNode;
+
+                // Módosítja az attribútum értékét
+                arElement.setAttribute("penznem", newPenznem);
             }
         }
 
