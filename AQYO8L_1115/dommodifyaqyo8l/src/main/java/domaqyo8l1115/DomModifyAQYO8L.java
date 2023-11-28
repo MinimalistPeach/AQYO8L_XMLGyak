@@ -1,4 +1,4 @@
-package AQYO8L_1115.dommodifyaqyo8l.src.main.java.domaqyo8l1115;
+package domaqyo8l1115;
 
 import java.io.File;
 
