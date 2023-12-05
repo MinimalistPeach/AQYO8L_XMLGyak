@@ -1,0 +1,116 @@
+<html>
+    <body>
+       <h2>Stremler László Órarend – 2023/24. I. félév.</h2>
+       <table border="4">
+          <tr bgcolor="#90EE90">
+             <th>ID</th>
+             <th>Tipus</th>
+             <th>Targy</th>
+             <th colspan="2">Idopont</th>
+             <th>Helyszin</th>
+             <th>Oktato</th>
+             <th>Szak</th>
+          </tr>
+          <tr>
+             <td>_1</td>
+             <td>eloadas</td>
+             <td> WEB-Technológiák </td>
+             <td> Hétfő </td>
+             <td>h - h</td>
+             <td> XXX.előadó </td>
+             <td> Agárdi Anita </td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+          <tr>
+             <td>_2</td>
+             <td>gyakorlat</td>
+             <td> WEB-Technológiák gyakorlat</td>
+             <td> Hétfő </td>
+             <td>h - h</td>
+             <td> In/202 </td>
+             <td> Agárdi Anita </td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+          <tr>
+             <td>_3</td>
+             <td>eloadas</td>
+             <td> Mesterséges intellmeddigencia alapok </td>
+             <td> Kedd </td>
+             <td>h - h</td>
+             <td> XXXII.előadó </td>
+             <td> Fazekas Levente Áron </td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+          <tr>
+             <td>_4</td>
+             <td>eloadas</td>
+             <td> Adatkezelés XML-ben </td>
+             <td> Kedd </td>
+             <td>h - h</td>
+             <td> XXXII.előadó </td>
+             <td> Dr. Bednarik László </td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+          <tr>
+             <td>_5</td>
+             <td>eloadas</td>
+             <td> Algoritmusok és vizsgálatuk </td>
+             <td> Kedd </td>
+             <td>h - h</td>
+             <td> A1/320 </td>
+             <td> Dr. Házy Attila </td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+          <tr>
+             <td>_6</td>
+             <td>gyakorlat</td>
+             <td> Adatkezelés XML-ben </td>
+             <td> Szerda </td>
+             <td>h - h</td>
+             <td> In/103 </td>
+             <td> Dr. Bednarik László </td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+          <tr>
+             <td>_7</td>
+             <td>gyakorlat</td>
+             <td> Adatkezelés XML-ben </td>
+             <td> Szerda </td>
+             <td>h - h</td>
+             <td> In/103 </td>
+             <td> Dr. Bednarik László </td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+          <tr>
+             <td>_8</td>
+             <td>eloadas</td>
+             <td> Vállalati információs rendszerek fejlesztése </td>
+             <td> Szerda </td>
+             <td>h - h</td>
+             <td> In/101 </td>
+             <td> Dr. Sasvári Péter László </td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+          <tr>
+             <td>_9</td>
+             <td>gyakorlat</td>
+             <td> Vállalati információs rendszerek fejlesztése </td>
+             <td> Szerda </td>
+             <td>h - h</td>
+             <td> In/103 </td>
+             <td> Dr. Sasvári Péter László </td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+          <tr>
+             <td>_10</td>
+             <td>gyakorlat</td>
+             <td> Mesterséges intellmeddigencia alapok </td>
+             <td> Csütörtök </td>
+             <td>h - h</td>
+             <td> I.előadó </td>
+             <td> Fazekas Levente Áron </td>
+             <td>Programtervező Informatikus</td>
+          </tr>
+       </table>
+    </body>
+ </html>

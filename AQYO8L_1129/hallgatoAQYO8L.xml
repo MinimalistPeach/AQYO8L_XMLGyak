@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="hallgatoAQYO8L.xsl"?>
+<class>
+    <student id="01">
+        <vezeteknev>Stremler</vezeteknev>
+        <keresztnev>László</keresztnev>
+        <becenev>Laci</becenev>
+        <kor>22</kor>
+        <osztondij>21000</osztondij>
+    </student>
+    <student id="02">
+        <vezeteknev>Kis</vezeteknev>
+        <keresztnev>Árpád</keresztnev>
+        <becenev>Árpika</becenev>
+        <kor>19</kor>
+        <osztondij>30000</osztondij>
+    </student>
+    <student id="03">
+        <vezeteknev>Erdős</vezeteknev>
+        <keresztnev>Olívia</keresztnev>
+        <becenev>Oli</becenev>
+        <kor>23</kor>
+        <osztondij>32000</osztondij>
+    </student>
+</class>
