@@ -68,29 +68,29 @@ public class DomReadAQYO8L {
 
     // Eleme kiírás formázó metódus
     private static void printElement(String elementName, String content, PrintWriter file) {
-        printToFileAndConsole("                <" + elementName + ">" + content + "</" + elementName + ">", System.out,
+        printToFileAndConsole("            <" + elementName + ">" + content + "</" + elementName + ">", System.out,
                 file);
     }
 
     // Cím kiírás formázó metódus
     private static void printCim(Element cimElement, PrintWriter file) {
-        printToFileAndConsole("                <" + cimElement.getNodeName() + ">", System.out, file);
+        printToFileAndConsole("            <" + cimElement.getNodeName() + ">", System.out, file);
         printToFileAndConsole(
-                "                    <" + cimElement.getElementsByTagName("Iranyitoszam").item(0).getNodeName()
+                "               <" + cimElement.getElementsByTagName("Iranyitoszam").item(0).getNodeName()
                         + ">" + cimElement.getElementsByTagName("Iranyitoszam").item(0).getTextContent() + "</"
                         + cimElement.getElementsByTagName("Iranyitoszam").item(0).getNodeName() + ">",
                 System.out, file);
         printToFileAndConsole(
-                "                    <" + cimElement.getElementsByTagName("Telepules").item(0).getNodeName()
+                "               <" + cimElement.getElementsByTagName("Telepules").item(0).getNodeName()
                         + ">" + cimElement.getElementsByTagName("Telepules").item(0).getTextContent() + "</"
                         + cimElement.getElementsByTagName("Telepules").item(0).getNodeName() + ">",
                 System.out, file);
         printToFileAndConsole(
-                "                    <" + cimElement.getElementsByTagName("Utca").item(0).getNodeName() + ">"
+                "               <" + cimElement.getElementsByTagName("Utca").item(0).getNodeName() + ">"
                         + cimElement.getElementsByTagName("Utca").item(0).getTextContent() + "</"
                         + cimElement.getElementsByTagName("Utca").item(0).getNodeName() + ">",
                 System.out, file);
-        printToFileAndConsole("                    <" + cimElement.getElementsByTagName("Hazszam").item(0).getNodeName()
+        printToFileAndConsole("             <" + cimElement.getElementsByTagName("Hazszam").item(0).getNodeName()
                 + ">" + cimElement.getElementsByTagName("Hazszam").item(0).getTextContent() + "</"
                 + cimElement.getElementsByTagName("Hazszam").item(0).getNodeName() + ">", System.out, file);
         printToFileAndConsole("                </" + cimElement.getNodeName() + ">", System.out, file);
@@ -99,7 +99,7 @@ public class DomReadAQYO8L {
     // Áruházakat beolvasó metódus
     private static void readAruhaz(Document document, PrintWriter file) {
         NodeList aruhazList = document.getElementsByTagName("Aruhaz");
-        printToFileAndConsole("  <Aruhazak>", System.out, file);
+        printToFileAndConsole("    <Aruhazak>", System.out, file);
         for (int temp = 0; temp < aruhazList.getLength(); temp++) {
             Node node = aruhazList.item(temp);
             if (node.getNodeType() == Node.ELEMENT_NODE) {
@@ -114,13 +114,13 @@ public class DomReadAQYO8L {
                 printToFileAndConsole("        </Aruhaz>", System.out, file);
             }
         }
-        printToFileAndConsole("   </Aruhazak>", System.out, file);
+        printToFileAndConsole("    </Aruhazak>", System.out, file);
     }
 
     // Beszállítókat beolvasó metódus
     private static void readBeszallito(Document document, PrintWriter file) {
         NodeList beszallitoList = document.getElementsByTagName("Beszallito");
-        printToFileAndConsole("  <Beszallitok>", System.out, file);
+        printToFileAndConsole("    <Beszallitok>", System.out, file);
         for (int temp = 0; temp < beszallitoList.getLength(); temp++) {
             Node node = beszallitoList.item(temp);
             if (node.getNodeType() == Node.ELEMENT_NODE) {
@@ -144,7 +144,7 @@ public class DomReadAQYO8L {
                 printToFileAndConsole("        </Beszallito>", System.out, file);
             }
 
-            printToFileAndConsole("    </Beszallitok>", System.out, file);
+            printToFileAndConsole("     </Beszallitok>", System.out, file);
         }
     }
 
@@ -160,10 +160,10 @@ public class DomReadAQYO8L {
                 String beszallitoid = aruhazBeszallitoElement.getAttribute("beszallitoid");
                 String aruhazid = aruhazBeszallitoElement.getAttribute("aruhazid");
 
-                printToFileAndConsole("        <Aruhaz-Beszallito aruhazid=\"" + aruhazid + "\" beszallitoid=\""
+                printToFileAndConsole("     <Aruhaz-Beszallito aruhazid=\"" + aruhazid + "\" beszallitoid=\""
                         + beszallitoid + "\">", System.out, file);
-                printElement("Atlagos_Rendelt_Arumennyiseg", atlagos_Rendelt_Arumennyiseg, file);
-                printToFileAndConsole("       </Aruhaz-Beszallito>", System.out, file);
+                printToFileAndConsole("          <Atlagos_Rendelt_Arumennyiseg>"+atlagos_Rendelt_Arumennyiseg+"</Atlagos_Rendelt_Arumennyiseg>", System.out, file);
+                printToFileAndConsole("     </Aruhaz-Beszallito>", System.out, file);
             }
         }
     }
