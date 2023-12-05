@@ -73,6 +73,7 @@ public class DomWriteAQYO8L {
             addBeszallitoRaktarTermek(doc, raktarak, "5", "5", "Mars", "200", "Élelmiszer");
 
             // Akciós termékek hozzáadása
+            // Akciós termékek árait HashMap-ben tárolom, így találtam a legegyszerűbbnek a felépítését
             HashMap<String, String> normalPrices1 = new HashMap<String, String>();
             normalPrices1.put("HUF", "1000");
             normalPrices1.put("EUR", "3");
@@ -111,7 +112,7 @@ public class DomWriteAQYO8L {
             addAruhazBeszallitoKapcsolat(doc, rootElement, "3", "5", "300");
 
             // Dokumentum kiírása, mentése
-            File outputFile = new File("XMLTaskAQYO8L\\2.feladat\\XMLAQYO8L_2.xml");
+            File outputFile = new File("XMLTaskAQYO8L\\2.feladat\\XMLAQYO8L_1.xml");
 
             PrintWriter file = new PrintWriter(outputFile, "UTF-8");
 
@@ -144,6 +145,7 @@ public class DomWriteAQYO8L {
         file.println(msg);
     }
 
+    // Fejrész elkészítő metódus
     private static void printHeader(Document doc, PrintWriter file) {
         printToFileAndConsole("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", System.out, file);
         printToFileAndConsole(

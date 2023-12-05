@@ -26,7 +26,7 @@ public class DomReadAQYO8L {
             doc.getDocumentElement().normalize();
 
             //Kimeneti fájl inicializálása
-            PrintWriter outfile = new PrintWriter(new File("XMLTaskAQYO8L\\2.feladat\\XMLAQYO8L_1.xml"), "UTF-8");
+            PrintWriter outfile = new PrintWriter(new File("XMLTaskAQYO8L\\2.feladat\\XMLAQYO8L_2.xml"), "UTF-8");
 
             // XML adatok kiírása
             printToFileAndConsole("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", System.out, outfile);
