@@ -112,7 +112,7 @@ public class DomWriteAQYO8L {
             addAruhazBeszallitoKapcsolat(doc, rootElement, "3", "5", "300");
 
             // Dokumentum kiírása, mentése
-            File outputFile = new File("XMLTaskAQYO8L\\2.feladat\\XMLAQYO8L_1.xml");
+            File outputFile = new File("XMLTaskAQYO8L\\2.feladat\\XMLAQYO8L_2.xml");
 
             PrintWriter file = new PrintWriter(outputFile, "UTF-8");
 

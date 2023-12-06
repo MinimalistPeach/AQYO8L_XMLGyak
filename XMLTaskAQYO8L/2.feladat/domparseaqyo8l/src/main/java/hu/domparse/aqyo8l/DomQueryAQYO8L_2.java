@@ -12,7 +12,7 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 
-public class DomQueryAQYO8L {
+public class DomQueryAQYO8L_2 {
     public static void main(String args[]) {
         try {
             // DocumentBuilder inicializálása
@@ -35,9 +35,8 @@ public class DomQueryAQYO8L {
                     Element aruhaz = (Element) node;
 
                     // Kiírja az áruház ID-ját és nevét
-                    System.out.println("<aruhaz" + " aruhazid=\"" + aruhaz.getAttribute("aruhazid") + "\"" + ">\n"
-                            + "     <Nev>" + aruhaz.getElementsByTagName("Nev").item(0).getTextContent() + "</Nev>\n"
-                            + "</aruhaz>");
+                    System.out.println("Áruház ID: " + aruhaz.getAttribute("aruhazid") + " Áruház neve: "
+                            + aruhaz.getElementsByTagName("Nev").item(0).getTextContent());
                 }
             }
 
@@ -79,10 +78,8 @@ public class DomQueryAQYO8L {
                             if (aruhaz.getAttribute("aruhazid")
                                     .equals(aruhazBeszallitoKapcsolat.getAttribute("aruhazid"))) {
                                 // Hozzáadja a kiírandó sorhoz az áruház nevét
-                                kiirtSor += "<aruhaz aruhazid=\"" + aruhazBeszallitoKapcsolat.getAttribute("aruhazid")
-                                        + "\">\n"
-                                        + "     <Nev>" + aruhaz.getElementsByTagName("Nev").item(0).getTextContent() + "</Nev>\n"
-                                        + "</aruhaz>\n";
+                                kiirtSor += "Áruház neve: "
+                                        + aruhaz.getElementsByTagName("Nev").item(0).getTextContent() + " ";
                             }
                         }
                     }
@@ -99,10 +96,8 @@ public class DomQueryAQYO8L {
                             if (beszallito.getAttribute("beszallitoid")
                                     .equals(aruhazBeszallitoKapcsolat.getAttribute("beszallitoid"))) {
                                 // Hozzáadja a kiírandó sorhoz a beszállító nevét
-                                kiirtSor += "<beszallito beszallitoid=\""
-                                        + aruhazBeszallitoKapcsolat.getAttribute("beszallitoid") + "\">\n"
-                                        + "     <Nev>" +  beszallito.getElementsByTagName("Nev").item(0).getTextContent() + "</Nev>\n"
-                                        + "</beszallito>";
+                                kiirtSor += "Beszállító neve: "
+                                        + beszallito.getElementsByTagName("Nev").item(0).getTextContent();
                             }
                         }
                     }
@@ -156,9 +151,8 @@ public class DomQueryAQYO8L {
                                 // Beállítja a legtöbb árut rendelő áruház darabszámát
                                 aruDarab = rendeltMennyiseg;
                                 // Hozzáadja a kiírandó sorhoz az áruház nevét
-                                kiirtSor = "<aruhaz aruhazid=\"" + aruhazBeszallitoKapcsolat.getAttribute("aruhazid")
-                                        + "\">\n" + "     <Nev>" + aruhaz.getElementsByTagName("Nev").item(0).getTextContent() + "</Nev>\n"
-                                        + "</aruhaz>";
+                                kiirtSor = "Áruház neve: " + aruhaz.getElementsByTagName("Nev").item(0).getTextContent()
+                                        + ", rendelt mennyiség: " + rendeltMennyiseg;
                             }
                         }
                     }
@@ -188,18 +182,12 @@ public class DomQueryAQYO8L {
                     // Ha az áruház Miskolcon található, akkor kiírja az áruház ID-ját, nevét és
                     // pontos címét
                     if (telepulesNode.getTextContent().equals("Miskolc")) {
-                        System.out.println("<aruhaz aruhazid=\"" + aruhaz.getAttribute("aruhazid") + "\">\n"
-                                + "     <Nev>" + aruhaz.getElementsByTagName("Nev").item(0).getTextContent() + "</Nev>\n"
-                                + "     <Cim>\n"
-                                + "         <Iranyitoszam>"
-                                + cim.getElementsByTagName("Iranyitoszam").item(0).getTextContent()
-                                + "</Iranyitoszam>\n"
-                                + "         <Telepules>" + cim.getElementsByTagName("Telepules").item(0).getTextContent()
-                                + "</Telepules>\n"
-                                + "         <Utca>" + cim.getElementsByTagName("Utca").item(0).getTextContent() + "</Utca>\n"
-                                + "         <Hazszam>" + cim.getElementsByTagName("Hazszam").item(0).getTextContent() + "</Hazszam>\n"
-                                + "     </Cim>"
-                                + "\n</aruhaz>");
+                        System.out.println("Áruház ID: " + aruhaz.getAttribute("aruhazid") + " Áruház neve: "
+                                + aruhaz.getElementsByTagName("Nev").item(0).getTextContent() + " Címe: "
+                                + cim.getElementsByTagName("Iranyitoszam").item(0).getTextContent() + ", "
+                                + cim.getElementsByTagName("Telepules").item(0).getTextContent() + ", "
+                                + cim.getElementsByTagName("Utca").item(0).getTextContent() + ", "
+                                + cim.getElementsByTagName("Hazszam").item(0).getTextContent());
                     }
                 }
             }
@@ -235,10 +223,9 @@ public class DomQueryAQYO8L {
                     // sorhoz
                     if (mertekegyseg.equals("ora") && Integer.valueOf(szallitasiIdo.getTextContent()) <= 2
                             || mertekegyseg.equals("perc") && Integer.valueOf(szallitasiIdo.getTextContent()) <= 120) {
-                        kiirtSor += "<Beszallito beszallitoid=\"" + beszallito.getAttribute("beszallitoid") + "\">\n"
-                                + "     <Nev>" + beszallito.getElementsByTagName("Nev").item(0).getTextContent() + "</Nev>" + "\n     <Atlagos_szallitasi_ido mertekegyseg=\""+mertekegyseg+"\">"
-                                + szallitasiIdo.getTextContent() + "</Atlagos_szallitasi_ido>" + "\n"
-                                + "</Beszallito>\n";
+                        kiirtSor += "Beszállító ID: " + beszallito.getAttribute("beszallitoid") + ", Beszállító neve: "
+                                + beszallito.getElementsByTagName("Nev").item(0).getTextContent() + ", Szállítási idő: "
+                                + szallitasiIdo.getTextContent() + " " + mertekegyseg + "\n";
                     }
 
                 }
